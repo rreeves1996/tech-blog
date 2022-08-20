@@ -45,65 +45,29 @@ router.get('/dashboard', async (req, res) => {
     }
 });
 
-router.get('/dashboard/post/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
                 { 
-                  model: User,
-                  atttributes: ['name'],
+                    model: User,
+                    atttributes: ['username', id],
                 }
             ]
         });
 
-        const commentData = await Comment.findAll({ where: {post_id: req.params.id}, 
+        const post = postData.map((Post) => Post.get({ plain: true }));
+
+        const commentData = await Comment.findAll({ where: { post_id: req.params.id }, 
             include: [
                 {
-                  model: User,
-                  attributes: ['name']
+                    model: User,
+                    attributes: ['username']
                 }
             ]
         });
 
-        const post = postData.get({ plain: true });
-
-        const comments = commentData.map((comment) => comment.get({plain: true}));
-
-        res.render('post', {
-            post,
-            comments,
-            logged_in: req.session.logged_in
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-router.get('/post/:id', async (req, res) => {
-    try {
-        const postData = await Post.findByPk(req.params.id, {
-            include: [
-                { 
-                  model: User,
-                  atttributes: ['name'],
-                }
-            ]
-        });
-
-        const commentData = await Comment.findAll(
-            { 
-            where: {post_id: req.params.id}, 
-            include: [
-                {
-                  model: User,
-                  attributes: ['name']
-                }
-            ]
-        });
-
-        const post = postData.get({ plain: true });
-
-        const comments = commentData.map((comment) => comment.get({plain: true}));
+        const comments = commentData.map((Comment) => Comment.get({ plain: true }));
 
         res.render('post', {
             post,
@@ -127,10 +91,7 @@ router.get('/new-comment', auth, async (req, res) => {
 
 
 
-
-
-
-router.get('/dashboard/new-post', auth, async (req, res) => {
+router.get('/new-post', auth, async (req, res) => {
     try {
         res.render('new-post', {
             logged_in: req.session.logged_in
