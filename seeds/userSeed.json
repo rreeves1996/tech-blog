@@ -1,17 +1,17 @@
 [
     {
       "id":"1",
-      "email": "john@johnmail.john",
+      "username": "Lawn John",
       "password": "password123"
     },
     {
       "id":"2",
-      "email": "bob@mail.net",
+      "username": "Bob Knob",
       "password": "123password"
     },
     {
       "id":"3",
-      "email": "thirduserseed@userseeds.com",
+      "username": "Turd Yewser",
       "password": "123password123"
     }
 ]
