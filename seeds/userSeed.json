@@ -1,0 +1,18 @@
+[
+    {
+      "id":"1",
+      "email": "john@johnmail.john",
+      "password": "password123"
+    },
+    {
+      "id":"2",
+      "email": "bob@mail.net",
+      "password": "123password"
+    },
+    {
+      "id":"3",
+      "email": "thirduserseed@userseeds.com",
+      "password": "123password123"
+    }
+]
+  
