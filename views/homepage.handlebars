@@ -1,0 +1,9 @@
+{{#each posts as |post|}}
+    <div class="post-container card">
+        <div class="card-body">
+            <a href="/{{post.id}}"><h2 class="card-title"><strong>{{post.title}}</strong></h2>
+            <h5 class="card-subtitle"><i class="fa-solid fa-chevron-right"></i> posted by <strong>{{post.user.username}}</strong> at <strong>{{format_date post.creation_date}}</strong></h5></a>
+            <p class="card-text">This is some text on this post.</p>
+        </div>
+    </div>
+{{/each}}

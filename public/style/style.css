@@ -1,3 +1,7 @@
+:root {
+    --var-dark-blue: rgb(33,37,41);
+}
+
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -5,7 +9,7 @@
 
 body {
     font-family: 'Lora', serif;
-    color: white;
+    color: var(--var-dark-blue);
 }
 a {
     text-decoration: none !important;
@@ -21,7 +25,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-item {
     align-items: flex-start;
 }
 .navbar-brand {
-    margin: 10px 5px 0px 15px;
+    margin: 10px 0px 0px 20px;
     text-transform: uppercase;
     font-size: 1.5em;
 }
@@ -33,7 +37,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-item {
 }
 .navbar-brand span {
     background-color: white;
-    color: rgb(33,37,41);
+    color: var(--var-dark-blue);
     font-weight: 700;
     position: relative;
     padding: 1px 7px 2px 8px;
@@ -44,5 +48,39 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-item {
     border-bottom-right-radius: 9px;
 }
 .collapse {
-    margin-left: 80px;
+    margin-top: -5px;
+    margin-left: 83px;
+}
+
+.post-container {
+    margin: 15px;
+}
+.card {
+    background-color: white;
+    border: none;
+}
+.card-body {
+    padding: 0px;
+}
+.card-title, .card-subtitle {
+
+    background-color: var(--var-dark-blue);
+    color: white;
+}
+.card-title {
+    padding: 20px 20px 10px 25px;
+    margin-bottom: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.card-subtitle i {
+    font-size: .75rem;
+    padding: 0 5px 20px 25px;
+}
+.card-text {
+    padding: 15px 25px 15px 25px;
+    font-size: 125%;
+    border: 1px solid var(--var-dark-blue);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
