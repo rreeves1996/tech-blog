@@ -1,4 +1,4 @@
-{{#each posts as |post|}}
+{{#each (reverse_array posts) as |post|}}
     <div class="post-container card">
         <div class="card-body">
             <a href="/{{post.id}}"><h2 class="card-title"><strong>{{post.title}}</strong></h2>
