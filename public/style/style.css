@@ -1,7 +1,15 @@
 :root {
     --var-dark-blue: rgb(33,37,41);
+    --var-blue: rgb(55, 61, 66);
+    --mdb-blue: rgb(55, 61, 66) !important;
+    --main-gradient: linear-gradient(36deg, rgba(207,70,252,1) 0%, rgba(9,102,213,1) 100%);
 }
-
+.btn-primary {
+    background-color: rgb(74, 97, 228);
+}
+.btn-primary:hover {
+    background-color: rgb(119, 139, 255);
+}
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -9,7 +17,7 @@
 
 body {
     font-family: 'Lora', serif;
-    color: var(--var-dark-blue);
+    color: rgb(75, 0, 173) !important;
 }
 a {
     text-decoration: none !important;
@@ -18,60 +26,118 @@ a {
 h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-item {
     font-family: 'Montserrat', sans-serif;
 }
+label {
+    font-size: 130%;
+    line-height: 30px;
+    padding: 0;
+    color: rgba(80, 41, 131, 0.459) !important;
+}
+input {
+    height: 40px;
 
+}
+/* .form-control:focus ~ .form-label{ color: red !important; border-color: red !important;}
+.form-control:focus ~ .form-notch div { border-color: red !important; box-shadow: 0 0 1px 0px red !important;} */
+/* .md-form label.active { color: red !important;} */
 .navbar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    background: rgb(207,70,252);
+    background: linear-gradient(36deg, rgb(22, 76, 177) 12%, rgb(207,70,252) 100%);
+    padding-bottom: 0;
+    border-bottom: 1px solid rgba(21, 18, 43, 0.411);
 }
+
 .navbar-brand {
-    margin: 10px 0px 0px 20px;
+    margin: 0;
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    display: flex;
+    flex-direction: column;
+}
+.navbar-logo {
+    display: flex !important;
+    position: relative !important;
+    flex-direction: row !important;
+    width: 1000px;
+    margin: 7px 0 7px 17px;
 }
 .navbar i {
     margin: 0 0 0 0;
     padding: 10px;
-    border: 3px solid white;
-    border-radius: 9px;
+    border: 5px solid white;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size: 2.4em;
+
 }
+
 .navbar-brand span {
     background-color: white;
-    color: var(--var-dark-blue);
+    color: rgb(22, 76, 177);
     font-weight: 700;
     position: relative;
-    padding: 1px 7px 2px 8px;
+    line-height: 1.9;
+    padding: 0px 13px 1px 8px;
     border-top: 3px solid white;
     border-bottom: 3px solid white;
     left: -2px;
     border-top-right-radius: 9px;
     border-bottom-right-radius: 9px;
 }
-.collapse {
-    margin-top: -5px;
-    margin-left: 83px;
+.navbar-brand-text p {
+    font-family: 'Lora', sans-serif;
+    text-transform: none;
+    font-size: 85%;
+    font-weight: 100;
+    position:absolute;
+    bottom: -11px;
+    left: 93px;
 }
-
-.post-container {
+.collapse {
+    margin: 0px;
+}
+.navbar-nav a {
+    display: flex;
+    padding: 10px 20px 10px 20px !important;
+    margin: 0px 1px 0px 1px;
+    justify-content: center;
+    border-radius: 3px;
+}
+.navbar-nav a:hover{
+    background-color: rgba(255, 255, 255, 0.089);
+}
+.divider {
+    width: 1px;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(214, 214, 214, 0.219) 47%,rgba(184, 184, 184, 0.253) 53%, rgba(0,0,0,0) 100%);
+}
+.post-container, .login-form-container {
     margin: 15px;
+
+    border-radius: 10px;
 }
 .card {
     background-color: white;
-    border: none;
+    
 }
 .card-body {
     padding: 0px;
 }
-.card-title, .card-subtitle {
-
-    background-color: var(--var-dark-blue);
+.card-title, .card-subtitle, .login-form-container h1 {
+    background: rgb(88,70,252);
+    background: linear-gradient(41deg, rgb(109, 70, 252) 0%, rgb(74, 97, 228) 20%, rgb(117, 45, 212) 100%);
     color: white;
+    
 }
-.card-title {
+.card-title, .login-form-container h1 {
     padding: 20px 20px 10px 25px;
     margin-bottom: 0px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    border:  1px solid rgba(21, 18, 43, 0.411);
 }
 .card-subtitle i {
     font-size: .75rem;
@@ -80,7 +146,35 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-item {
 .card-text {
     padding: 15px 25px 15px 25px;
     font-size: 125%;
-    border: 1px solid var(--var-dark-blue);
+    border: 1px solid rgb(12, 5, 36);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+}
+.login-form-container {
+    width: 550px;
+    margin: 15px auto;
+}
+.login-form-container h1 {
+    text-align: center;
+    padding: 30px;
+    font-size: 300%;
+    font-weight: 700;
+}
+.login-form {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(75, 0, 173);
+    padding: 15px 25px 15px 25px;
+    
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-right:  1px solid rgba(45, 27, 68, 0.658);
+    border-left:  1px solid rgba(45, 27, 68, 0.658);
+    border-bottom:  1px solid rgba(45, 27, 68, 0.658);
+}
+.login-form h4 {
+    text-align: center;
+    margin: 15px 0px 25px 0px;
+}
+.form-group {
+    margin: 15px auto;
 }

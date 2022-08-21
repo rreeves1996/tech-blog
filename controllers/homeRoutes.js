@@ -28,6 +28,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+      res.redirect('/dashboard');
+      return;
+    }
+    
+    res.render('login', {
+      logged_in: req.session.logged_in
+    });
+});
+
 router.get('/dashboard', async (req, res) => {
     try {
         const postData = await Post.findAll({
