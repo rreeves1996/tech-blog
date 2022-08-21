@@ -39,6 +39,7 @@ input {
 /* .form-control:focus ~ .form-label{ color: red !important; border-color: red !important;}
 .form-control:focus ~ .form-notch div { border-color: red !important; box-shadow: 0 0 1px 0px red !important;} */
 /* .md-form label.active { color: red !important;} */
+
 .navbar {
     display: flex;
     flex-direction: column;
@@ -132,7 +133,7 @@ input {
     color: white;
     
 }
-.card-title, .login-form-container h1 {
+.card-title, .login-form-container h1  {
     padding: 20px 20px 10px 25px;
     margin-bottom: 0px;
     border-top-left-radius: 8px;
@@ -169,7 +170,7 @@ input {
     border-bottom-right-radius: 8px;
     border-right:  1px solid rgba(45, 27, 68, 0.658);
     border-left:  1px solid rgba(45, 27, 68, 0.658);
-    border-bottom:  1px solid rgba(45, 27, 68, 0.658);
+    border-bottom:  1px solid rgba(21, 18, 43, 0.582);
 }
 .login-form h4 {
     text-align: center;
