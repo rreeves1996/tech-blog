@@ -1,9 +1,13 @@
 {{#each (reverse_array posts) as |post|}}
-    <div class="post-container card">
-        <div class="card-body">
-            <a href="/{{post.id}}"><h2 class="card-title"><strong>{{post.title}}</strong></h2>
-            <h5 class="card-subtitle"><i class="fa-solid fa-chevron-right"></i> posted by <strong>{{post.user.username}}</strong> at <strong>{{format_date post.creation_date}}</strong></h5></a>
-            <p class="card-text">This is some text on this post.</p>
-        </div>
+<div class="post-container card">
+    <div class="card-body">
+        <a href="/home"><h2 class="card-title"><strong>{{post.title}}</strong></h2>
+        <h5 class="card-subtitle"><i class="fa-solid fa-chevron-right"></i> posted by <strong>{{post.user.username}}</strong> on <strong>{{format_date post.creation_date}}</strong></h5></a>
+
+        <p class="card-text user-post-text">
+            {{post.text}}
+            <small><strong>Post ID - {{post.id}}</strong></small>
+        </p>
     </div>
+</div>
 {{/each}}
