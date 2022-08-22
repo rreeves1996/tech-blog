@@ -1,9 +1,10 @@
 <div class="dashboard-container">
+    <h1 class="your-posts"><strong>Your posts:</strong></h1>
     {{#each (reverse_array posts) as |post|}}
     <div class="post-container card">
         <div class="card-body">
-            <a href="/home"><h2 class="card-title"><strong>{{post.title}}</strong></h2>
-            <h5 class="card-subtitle"><i class="fa-solid fa-chevron-right"></i> posted by <strong>you</strong> on <strong>{{format_date post.creation-date}}</strong></h5></a>
+            <a href="/post/{{post.id}}"><h2 class="card-title"><strong>{{post.title}}</strong></h2>
+            <h5 class="card-subtitle"><i class="fa-solid fa-chevron-right"></i> posted by <strong>you</strong> on <strong>{{format_date post.creation_date}}</strong></h5></a>
 
             <p class="card-text user-post-text">
                 {{post.text}}
@@ -30,8 +31,10 @@
             </div>
 
             <div class="text-center pt-1 mb-3 pb-1">
-                <button class="btn btn-primary fa-lg mt-2" type="button">Submit post</button>
+                <button class="btn btn-primary fa-lg mb-4 mt-2" type="button">Submit post</button>
             </div>
         </form>
     </div>
 </div>
+</main>
+<script src = '/js/logout.js'></script>

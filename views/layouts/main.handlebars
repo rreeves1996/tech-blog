@@ -43,7 +43,7 @@
                 <a class="nav-item nav-link" id="home" href="/">Home</a><div class="divider"></div>
                 {{#if logged_in}}
                 <a class="nav-item nav-link" id="dash" href="/dashboard">Dashboard</a><div class="divider"></div>
-                <a class="nav-item nav-link" id="logout" href="/">Logout</a><div class="divider"></div>
+                <a class="nav-item nav-link" id="logout">Logout</a><div class="divider"></div>
                 {{else}}
                 <a class="nav-item nav-link" id="login" href="/login">Login</a>
                 {{/if}}
@@ -52,8 +52,8 @@
     </nav>
     <main class="container justify-content-center">
         {{{body}}}
-    </main>
     <!-- MDB -->
+
     <script
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"

@@ -1,16 +1,16 @@
 [
     {
-      "id":"1",
+      "id":1,
       "username": "Lawn John",
       "password": "password123"
     },
     {
-      "id":"2",
+      "id":2,
       "username": "Bob Knob",
       "password": "123password"
     },
     {
-      "id":"3",
+      "id": 3,
       "username": "Turd Yewser",
       "password": "123password123"
     }

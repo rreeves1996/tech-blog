@@ -64,34 +64,26 @@ router.get('/dashboard', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/post/:id', async (req, res) => {
     try {
-        const postData = await Post.findByPk(req.params.id, {
+        const postData = await Post.findAll({
+            where: {
+              id: req.params.id,
+            },
             include: [
                 { 
                     model: User,
-                    atttributes: ['username', id],
+                    atttributes: ['username'],
                 }
             ]
         });
 
-        const post = postData.map((Post) => Post.get({ plain: true }));
+        const posts = postData.map((post) => post.get({ plain: true }));
 
-        const commentData = await Comment.findAll({ where: { post_id: req.params.id }, 
-            include: [
-                {
-                    model: User,
-                    attributes: ['username']
-                }
-            ]
-        });
-
-        const comments = commentData.map((Comment) => Comment.get({ plain: true }));
 
         res.render('post', {
+            posts,
             logged_in: req.session.logged_in,
-            post,
-            comments
 
         });
     } catch (err) {

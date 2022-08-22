@@ -2,12 +2,13 @@
     {
         "title": "Incredibly texty post text",
         "text": "This is some text on this post. The text is very texty, and quite possibly the textiest text the human race has seen in centuries. If this text was any textier, the world would collapse into a singularity.",
-        "user_id": 1
+        "user_id": 1,
+        "id": 1
     },
     {
         "title": "Placeholder title placeholds at unprecidented levels",
         "text": "Wow, I've never seen a title placehold so well. Somebody call NASA!!",
-        "user_id": 2
+        "user_id": 1
     },
     {
         "title": "I'm just here to post this",
