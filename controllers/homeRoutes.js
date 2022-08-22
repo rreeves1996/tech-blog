@@ -28,6 +28,25 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/login', (req, res) => {
+    try {
+        res.render('login', {
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);  
+    }
+});
+
+router.get('/register', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/dashboard');
+        return;
+    }
+    
+    res.render('register', {});
+});
+
 router.get('/dashboard', async (req, res) => {
     try {
         const postData = await Post.findAll({
@@ -70,9 +89,10 @@ router.get('/:id', async (req, res) => {
         const comments = commentData.map((Comment) => Comment.get({ plain: true }));
 
         res.render('post', {
+            logged_in: req.session.logged_in,
             post,
-            comments,
-            logged_in: req.session.logged_in
+            comments
+
         });
     } catch (err) {
         res.status(500).json(err);
@@ -101,24 +121,9 @@ router.get('/new-post', auth, async (req, res) => {
     }
 });
 
-router.get('/login', (req, res) => {
-    try {
-    res.render('login', {
-        logged_in: req.session.logged_in
-    });
-} catch (err) {
-    res.status(500).json(err);  
-}
-});
 
-router.get('/register', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/dashboard');
-        return;
-    }
-    
-    res.render('register', {});
-});
+
+
 
 
 module.exports = router;
