@@ -1,17 +1,27 @@
 [
     {
-        "text":"Post ID 1 from User 1",
-        "user_id": "1",
-        "post_id": "1"
+        "text":"Can somebody on here tell me how to use the Google machine",
+        "user_id": 3,
+        "post_id": 1
     },
     {
-        "text":"Post ID 2 from User 2",
-        "user_id": "2",
-        "post_id": "2"
+        "text":"My god...",
+        "user_id": 2,
+        "post_id": 1
     },
     {
-        "text":"Post ID 1 from User 3",
-        "user_id": "3",
-        "post_id": "1"
+        "text":"That's cool, but check out how well this placeholder text placeholds.",
+        "user_id": 1,
+        "post_id": 2
+    },
+    {
+        "text":"And I'm just here to comment this! This.",
+        "user_id": 1,
+        "post_id": 3
+    },
+    {
+        "text":"Search green bean casserole recipe Google",
+        "user_id": 3,
+        "post_id": 3
     }
 ]

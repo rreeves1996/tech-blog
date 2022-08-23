@@ -19,6 +19,7 @@ router.post('/', async (req, res) => {
 router.post('/logout', (req, res) => {
     
     console.log("asdoasdksa");
+
     if (req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end();
@@ -27,6 +28,7 @@ router.post('/logout', (req, res) => {
         res.status(404).json(err).end();
     }
 });
+
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { username: req.body.username } });

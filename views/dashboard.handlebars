@@ -1,4 +1,5 @@
 <div class="dashboard-container d-flex justify-content-center">
+    {{#if posts}}
     <h1 class="your-posts"><strong>Your posts:</strong></h1>
     {{#each (reverse_array posts) as |post|}}
     <div class="post-container card">
@@ -7,7 +8,7 @@
             <h5 class="card-subtitle"><i class="fa-solid fa-chevron-right"></i> posted by <strong>{{post.user.username}}</strong> on <strong>{{format_date post.creation_date}}</strong></h5></div></a>
             
             <span class="buttons"><a href="/edit-post"><i class="fas fa-edit"></i></a><i id="delete-button" class="fas fa-trash-alt"></i></span>
-            
+
             <p class="card-text user-post-text">
                 {{post.text}}
                 <small><strong>Post ID - {{post.id}}</strong></small>
@@ -15,26 +16,30 @@
         </div>
     </div>
     {{/each}}
+    {{else}}
+    <h1 class="your-posts"><strong>You haven't posted anything yet!</strong></h1>
+    {{/if}}
     <div class="new-post-container">
         <h1 class="card-title"><strong>Create new post:</strong></h1>
         <form class="new-post-form">
             <h4>Enter title and post content</h4>
 
             <div class="form-outline form-red mb-4">
-                <input type="text" id="title-input" class="form-control"/>
-                <label class="form-label" for="title-input">Title</label>
+                <input type="text" id="post-title-input" class="form-control"/>
+                <label class="form-label" for="post-title-input">Title</label>
             </div>
 
 
             <div class="form-outline mb-4">
-                <textarea class="form-control" id="content-input" rows="8"></textarea>
-                <label for="content-input" class="form-label">Enter post content</label>
+                <textarea class="form-control" id="post-content-input" rows="8"></textarea>
+                <label for="post-content-input" class="form-label">Enter post content</label>
             </div>
 
             <div class="text-center pt-1 mb-3 pb-1">
-                <button class="btn btn-primary fa-lg mb-4 mt-2" type="button">Submit post</button>
+                <button class="btn btn-primary fa-lg mb-4 mt-2" id="new-post-submit"type="button">Submit post</button>
             </div>
         </form>
     </div>
 </div>
 </main>
+<script src = '/js/dashboard.js'></script>

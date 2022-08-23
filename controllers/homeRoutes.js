@@ -50,8 +50,16 @@ router.get('/register', (req, res) => {
 router.get('/dashboard', async (req, res) => {
     try {
         const postData = await Post.findAll({
-            where: { user_id: req.session.user_id }
-        });
+            where: {
+                user_id: req.session.user_id,
+            },
+            include: [
+                {
+                    model: User,
+                    attributes: ['username', 'id'],
+                }
+            ]
+          });
 
         const posts = postData.map((Post) => Post.get({ plain: true }));
 
@@ -78,44 +86,32 @@ router.get('/post/:id', async (req, res) => {
             ]
         });
 
-        const posts = postData.map((post) => post.get({ plain: true }));
+        const posts = postData.map((Post) => Post.get({ plain: true }));
+
+        const commentData = await Comment.findAll({
+            where: {
+                post_id: req.params.id,
+            },
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+            ]
+        });
+      
+        const comments = commentData.map((Comment) => Comment.get({ plain: true }));
 
 
         res.render('post', {
             posts,
-            logged_in: req.session.logged_in,
-
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-router.get('/new-comment', auth, async (req, res) => {
-    try {
-        res.render('new-comment', {
+            comments,
             logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
     }
 });
-
-
-
-router.get('/new-post', auth, async (req, res) => {
-    try {
-        res.render('new-post', {
-            logged_in: req.session.logged_in
-        });
-    } catch (err) {
-        res.status(500).json(err);  
-    }
-});
-
-
-
-
 
 
 module.exports = router;

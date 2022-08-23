@@ -1,14 +1,68 @@
-{{#each posts as |post|}}
-<div class="post-container card">
-    <div class="card-body">
-        <a href="/post/{{post.id}}"><div class="card-title"><h2><strong>{{post.title}}</strong></h2>
-        <h5 class="card-subtitle"><i class="fa-solid fa-chevron-right"></i> posted by <strong>{{post.user.username}}</strong> on <strong>{{format_date post.creation_date}}</strong></h5></div></a>
-        
-        <p class="card-text user-post-text">
-            {{post.text}}
-            <small><strong>Post ID - {{post.id}}</strong></small>
-        </p>
+    <div class="single-post-container">
+        {{#each posts as |post|}}
+        <div class="post-container card">
+            <div class="card-body">
+                <a href="/post/{{post.id}}"><div class="card-title"><h2><strong>{{post.title}}</strong></h2>
+                <h5 class="card-subtitle"><i class="fa-solid fa-chevron-right"></i> posted by <strong>{{post.user.username}}</strong> on <strong>{{format_date post.creation_date}}</strong></h5></div></a>
+                
+                <p class="card-text user-post-text">
+                    {{post.text}}
+                    <small><strong>Post ID - {{post.id}}</strong></small>
+                </p>
+            </div>
+        </div>
+        {{/each}}
+        {{#if logged_in}}
+        <div class="new-comment-container">
+            <h1 class="card-title"><strong>New Comment</strong></h1>
+            <form class="new-comment-form">
+                <h4>Write a new comment on this post:</h4>
+
+                <div class="form-outline mb-4">
+                    <textarea class="form-control" id="content-input" rows="8"></textarea>
+                    <label for="content-input" class="form-label">Enter post content</label>
+                </div>
+
+                <div class="text-center pt-1 mb-3 pb-1">
+                    <button class="btn btn-primary fa-lg mb-4 mt-2" type="button">Submit comment</button>
+                </div>
+            </form>
+        </div>
+        {{else}}
+        <div class="new-comment-container">
+            <h1 class="card-title"><strong>New Comment</strong></h1>
+            <form class="new-comment-form">
+                <h4>Login to add a comment:</h4>
+
+                <div class="text-center pt-1 mb-5 pb-1">
+                    <button href="/login" class="btn btn-primary btn-block fa-lg mb-5 w-75 m-auto" type="button">Log in</button>
+                    <p class="mb-0">Don't have an account?</p>
+                    <button href="/register" type="button" class="btn btn-primary fa-lg m-3">Create account</button>
+                </div>
+            </form>
+        </div>
+        {{/if}}
+        <div class="post-comments-container">
+            {{#if comments}}
+            <h1 class="post-comments"><strong>Post comments:</strong></h1>
+            
+            {{#each (reverse_array comments) as |comment|}}
+            <div class="container-with-icon" data-id="{{comment.id}}">
+              <div class="reply-icon"><i class="fa-solid fa-arrow-turn-up"></i></div>
+              <div class="comment-container card">
+                <div class="card-body">
+                    <span class="comment-header"><h2></i>by <strong>{{comment.user.username}}</strong> on <strong>{{format_date comment.creation_date}}</strong></h2></span>
+                    
+                    <p class="comment-text user-post-text">
+                        {{comment.text}}
+                    </p>
+                </div>
+              </div>
+            </div>
+            {{/each}}
+            {{else}}
+            <h1 class="post-comments text-center"><strong>No comments to show! :[</strong></h1>
+            {{/if}}
+        </div>
     </div>
-</div>
-{{/each}}
 </main>

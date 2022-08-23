@@ -48,262 +48,380 @@ input {
 .container {
     padding: 0 !important;
 }
-.navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: rgb(88,70,252);
-    background: linear-gradient(41deg, rgb(74, 97, 228) 40%, rgb(100, 54, 226) 100%);
-    padding: 0;
-    border-bottom: 1px solid var(--header-border);
-    margin-bottom: 15px;
-}
-.navbar-toggler {
-    color: white;
-}
-.navbar-brand {
-    margin: 0;
-    text-transform: uppercase;
-    font-size: 1.4em;
-    display: flex;
-    flex-direction: row;
-}
-.navbar-logo {
-    display: flex !important;
-    position: relative !important;
-    flex-direction: row !important;
-    width: 1000px;
-    margin: 17px 0 17px 17px;
-}
-.navbar-brand-text {
-    display: flex;
-    flex-direction: column;
-}
-.fa-blog {
-    margin: 0 0 0 0;
-    padding: 10px;
-    border: 5px solid white;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    font-size: 2.4em;
 
-}
 
-.navbar-brand span {
-    background-color: white;
-    color: rgb(22, 76, 177);
-    font-weight: 700;
-    position: relative;
-    line-height: 1;
-    padding: 12px 13px 12px 8px;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-    border-top-right-radius: 9px;
-    border-bottom-right-radius: 9px;
-}
-.navbar-brand-text p {
-    font-family: 'Lora', sans-serif;
-    text-transform: none;
-    font-size: 85%;
-    font-weight: 100;
-    line-height: 1;
-    position:relative;
-    bottom: -8px;
-    left: 10px;
-}
-.collapse {
-    margin: 0px;
-}
-.navbar-nav a {
-    display: flex;
-    padding: 10px 20px 10px 20px !important;
-    margin: 0px 1px 0px 1px;
-    justify-content: center;
-    border-radius: 3px;
-}
-.navbar-nav a:hover{
-    background-color: rgba(255, 255, 255, 0.089);
-}
-.divider {
-    width: 1px;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(214, 214, 214, 0.219) 47%,rgba(184, 184, 184, 0.253) 53%, rgba(0,0,0,0) 100%);
-}
+/* --------------------- */
+/* ------ NAV BAR ------ */
+/* --------------------- */
 
-.post-container {
-    margin: 15px auto;
-    border-radius: 10px;
-}
-.post-container {
-    width: 60vw;
-}
-.login-form-container {
-    width: 475px;
-    margin: 45px auto;
-}
-.remember-me-text {
-    font-size: 100%;
-}
-.post-container-card {
-    margin-bottom: 0px;
-}
-.card {
-    background-color: white;
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background: rgb(88,70,252);
+        background: linear-gradient(41deg, rgb(74, 97, 228) 40%, rgb(100, 54, 226) 100%);
+        padding: 0;
+        border-bottom: 1px solid var(--header-border);
+        margin-bottom: 15px;
+    }
+
+
+    /* ------ LOGO ------ */
+    /* ------------------ */
+
+    .fa-blog {
+        margin: 0 0 0 0;
+        padding: 10px;
+        border: 5px solid white;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        font-size: 2.4em;
+    }
+    .navbar-logo {
+        display: flex !important;
+        position: relative !important;
+        flex-direction: row !important;
+        width: 1000px;
+        margin: 17px 0 17px 17px;
+    }
+    .navbar-brand {
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 1.4em;
+        display: flex;
+        flex-direction: row;
+    }
+    .navbar-brand-text {
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar-brand span {
+        background-color: white;
+        color: rgb(63, 104, 182);
+        font-weight: 700;
+        position: relative;
+        line-height: 1;
+        padding: 12px 13px 12px 8px;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        border-top-right-radius: 9px;
+        border-bottom-right-radius: 9px;
+    }
+    .navbar-brand-text p {
+        font-family: 'Lora', sans-serif;
+        text-transform: none;
+        font-size: 85%;
+        font-weight: 100;
+        line-height: 1;
+        position:relative;
+        bottom: -8px;
+        left: 10px;
+    }
+
+
+    /* ------ NAV BUTTONS ------ */
+    /* ------------------------- */
+
+    .navbar-nav a {
+        display: flex;
+        padding: 10px 20px 10px 20px !important;
+        margin: 0px 1px 0px 1px;
+        justify-content: center;
+        border-radius: 3px;
+    }
+    .navbar-nav a:hover{
+        background-color: rgba(255, 255, 255, 0.089);
+    }
+    .divider {
+        width: 1px;
+        background: rgb(0,0,0);
+        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(214, 214, 214, 0.219) 47%,rgba(184, 184, 184, 0.253) 53%, rgba(0,0,0,0) 100%);
+    }
+
+
+    /* ------ NAV TOGGLER ------ */
+    /* ------------------------- */
+
+    .navbar-toggler {
+        position: absolute !important;
+        color:white;
+        padding: 0;
+        margin: 20px;
+        right: 0;
+        top: 13px;
+        opacity: 70%;
+        align-items: center;
+        transition: opacity 0.2s,
+        text-shadow 0.2s;
+    }
+    .navbar-toggler:not(.collapsed) {
+        opacity: 100%;
+        text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.541);
+        transition: opacity 0.2s,
+        text-shadow 0.2s;
+    }
+    .navbar-toggler-icon {
+        color: white;
+
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0; 
+        font-size: 200%;
+        line-height: 1.5;
+        transition: opacity 0.2s;
+    }
+
+
+
+
+/* ------------------------ */
+/* ------ CONTAINERS ------ */
+/* ------------------------ */
+
+    /* --- GENERIC CONTAINERS/CARDS --- */
+    /* -------------------------------- */
+
+    .card {
+        background-color: white;
+    }
+    .post-container {
+        width: 60vw;
+        margin: 15px auto;
+        border-radius: 10px;
+    }
+    .dashboard-container .post-container, .single-post-container .post-container{
+        width: 50vw;
+        margin: 0 auto;
+        margin-bottom: 1vw;
+    }
+    .dashboard-container, .single-post-container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        margin-top: 1vw;
+        width: 100vw;
+    }
+    .new-post-container, .new-comment-container {
+        width: 23vw;
+        position:absolute;
+        left: 1vw;
+        top: 174px;
+        margin-top: 1vw;
+        margin-right: 1vw;
+    }
+    .post-comments-container {
+        width: 50vw;
+        margin: auto;
+    }
+    .reply-icon {
+        margin-top: 4px;
+        margin-bottom: 4px;
+        position: absolute;
+        width: 4.5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .comment-container {
+        border:  1px solid var(--card-border);
+        border-radius: 8px;
+        position: relative;
+        width: 46vw;
+        margin: 0 auto;
+        left: 2vw;
+        margin-bottom: 7px;
+    }
+    .fa-arrow-turn-up {
+
+        margin-top: 10px;
+        transform: rotate(90deg);
+        font-size: 150%;
+        color: rgb(63, 105, 182);
+    }
+
+
+
+    /* --- FORMS --- */
+    /* ------------- */
     
-}
-.card-body {
-    padding: 0;
-}
-.card-subtitle {
-    color: white;
-}
-
-.card-title {
-    background: rgb(88,70,252);
-    background: linear-gradient(41deg, rgb(74, 97, 228) 40%, rgb(100, 54, 226) 100%);
-    color: white;
-    
-}
-.card-title, .login-form-container h1, .new-post-container h1 {
-    padding: 25px 20px 20px 25px;
-    margin-bottom: 0px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border:  1px solid var(--header-border);
-}
-.new-post-container h1, .login-form-container h1 {
-    text-align: center;
-    padding: 25px 20px 25px 20px;
-}
-.card-subtitle i {
-    font-size: .75rem;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-.card-text {
-    text-indent: 25px;
-    padding: 25px 40px 35px 40px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 125%;
-    border-right: 1px solid var(--card-border);
-    border-bottom: 1px solid var(--card-border);
-    border-left: 1px solid var(--card-border);
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    font-weight: 500;
-}
-.card-text small {
-    font-family: 'Montserrat', sans-serif;
-    color: rgba(107, 107, 107, 0.644);
-    position: absolute;
-    font-size: 70%;
-    bottom: 10px;
-    right: 25px;
-    
-}
-
-.login-form, .new-post-form {
-    font-family: 'Montserrat', sans-serif;
-    color: rgb(75, 0, 173);
-    padding: 15px 25px 15px 25px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border-right:  1px solid var(--card-border);
-    border-left:  1px solid var(--card-border);
-    border-bottom:  1px solid var(--card-border);
-}
-.login-form h4, .new-post-form h4 {
-    text-align: center;
-    margin: 15px 0px 25px 0px;
-}
-#logout {
-    cursor: pointer;
-}
-.form-group {
-    margin: 15px auto;
-}
-.dashboard-container {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 100vw;
-}
-.your-posts {
-    margin-top: 15px;
-    margin-bottom: 35px;
-    margin-left: 0px;
-    margin-right: 0px;
-    text-align: center;
-    font-size: 300%;
-    color: rgb(54, 68, 150);
-}
-
-.dashboard-container .post-container {
-    max-width: 50vw;
-    margin: 0 auto;
-    margin-bottom: 1vw;
-}
-.new-post-container {
-    max-width: 23vw;
-    position:absolute;
-    left: 1vw;
-    top: 174px;
-    margin-top: 1vw;
-    margin-right: 1vw;
-}
-.buttons {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 100%;
-    text-indent: 0;
-}
-.fa-edit, .fa-trash-alt {
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.712);
-    margin: 5px;
-    transition: color 0.2s;
-}
-.fa-edit:hover, .fa-trash-alt:hover {
-    color: white;
-    transition: color 0.2s;
-}
-.navbar-toggler {
-    position: absolute !important;
-    padding: 0;
-    margin: 20px;
-    right: 0;
-    top: 13px;
-    opacity: 70%;
-    align-items: center;
-    transition: opacity 0.2s,
-    text-shadow 0.2s;
-}
-.navbar-toggler:not(.collapsed) {
-    opacity: 100%;
-    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.541);
-    transition: opacity 0.2s,
-    text-shadow 0.2s;
-}
+    .login-form-container {
+        width: 475px;
+        margin: 45px auto;
+    }
+    .login-form, .new-post-form, .new-comment-form {
+        font-family: 'Montserrat', sans-serif;
+        color: rgb(75, 0, 173);
+        padding: 15px 25px 15px 25px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-right:  1px solid var(--card-border);
+        border-left:  1px solid var(--card-border);
+        border-bottom:  1px solid var(--card-border);
+    }
+    .form-group {
+        margin: 15px auto;
+    }
 
 
-.navbar-toggler-icon {
-    color: white;
 
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0; 
-    font-size: 200%;
-    line-height: 1.5;
-    transition: opacity 0.2s;
-}
+
+/* ------------------------------ */
+/* ------ HEADER/BODY TEXT ------ */
+/* ------------------------------ */
+
+    /* --- SHARED PROPERTIES --- */
+    /* ------------------------- */
+
+    .card-title, .login-form-container h1, .new-post-container h1, .new-comment-container h1 {
+        padding: 25px 20px 20px 25px;
+        margin-bottom: 0px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border:  1px solid var(--header-border);
+    }
+    .new-post-container h1, .login-form-container h1,.new-comment-container h1  {
+        text-align: center;
+        padding: 25px 20px 25px 20px;
+    }
+    .login-form h4, .new-post-form h4, .new-comment-form h4 {
+        text-align: center;
+        margin: 15px 0px 25px 0px;
+    }
+        
+
+    /* --- GENERIC CARDS --- */
+    /* --------------------- */
+
+    .card-body {
+        padding: 0;
+    }
+    .card-title {
+        background: rgb(88,70,252);
+        background: linear-gradient(41deg, rgb(74, 97, 228) 40%, rgb(100, 54, 226) 100%);
+        color: white;
+    }
+    .card-subtitle {
+        color: white;
+    }
+    .card-subtitle i {
+        font-size: .75rem;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .card-text {
+        text-indent: 15px;
+        padding: 25px 35px 35px 35px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 125%;
+        border-right: 1px solid var(--card-border);
+        border-bottom: 1px solid var(--card-border);
+        border-left: 1px solid var(--card-border);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        font-weight: 500;
+    }
+    .card-text small {
+        font-family: 'Montserrat', sans-serif;
+        color: rgba(107, 107, 107, 0.644);
+        position: absolute;
+        font-size: 70%;
+        bottom: 10px;
+        right: 25px;
+    }
+
+
+    /* --- COMMENTS --- */
+    /* ---------------- */
+
+    .comment-header h2 {
+        color: rgb(165, 166, 177);
+        margin: 10px 25px 0px 10px;
+        font-size: 100% !important;
+        
+    }
+    .comment-header strong {
+        color: rgb(144, 149, 175);
+    }
+    .comment-header i {
+        font-size: 70%;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .comment-text {
+        text-indent: 0px;
+        padding: 10px 35px 5px 35px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 125%;
+        font-weight: 500;
+    }
+
+
+    /* --- OTHER TEXT/ETC --- */
+    /* ---------------------- */
+
+    .your-posts {
+        margin-top: 15px;
+        margin-bottom: 35px;
+        margin-left: 0px;
+        margin-right: 0px;
+        text-align: center;
+        font-size: 300%;
+        color: rgb(63, 104, 182);
+    }
+    .remember-me-text {
+        font-size: 100%;
+    }
+    .post-comments {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        margin-left: 15px;
+        margin-right: 0px;
+        position: relative;
+
+        font-size: 200%;
+        color: rgb(63, 104, 182);
+    }
+
+
+
+
+/* --------------------- */
+/* ------ BUTTONS ------ */
+/* --------------------- */
+
+    .buttons {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 100%;
+        text-indent: 0;
+    }
+    .fa-edit, .fa-trash-alt {
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.712);
+        margin: 5px;
+        transition: color 0.2s;
+    }
+    .fa-edit:hover, .fa-trash-alt:hover {
+        color: white;
+        transition: color 0.2s;
+    }
+    #logout {
+        cursor: pointer;
+    }
+
+
+
+
 @media screen and (max-width: 991px) {
     .navbar {
         flex-direction: row !important;
     }
+    
     .container {
         margin-left: 0;
         margin-right: 0;
@@ -331,10 +449,4 @@ input {
         top: 0;
         left: 0;
     }
-
-    /* .navbar-toggler:hover {
-        opacity: 100%;
-        
-    } */
-
 }
