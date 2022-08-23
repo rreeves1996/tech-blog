@@ -1,21 +1,22 @@
-<div class="dashboard-container">
+<div class="dashboard-container d-flex justify-content-center">
     <h1 class="your-posts"><strong>Your posts:</strong></h1>
     {{#each (reverse_array posts) as |post|}}
     <div class="post-container card">
         <div class="card-body">
-            <a href="/post/{{post.id}}"><h2 class="card-title"><strong>{{post.title}}</strong></h2>
-            <h5 class="card-subtitle"><i class="fa-solid fa-chevron-right"></i> posted by <strong>you</strong> on <strong>{{format_date post.creation_date}}</strong></h5></a>
-
+            <a href="/post/{{post.id}}"><div class="card-title"><h2><strong>{{post.title}}</strong></h2>
+            <h5 class="card-subtitle"><i class="fa-solid fa-chevron-right"></i> posted by <strong>{{post.user.username}}</strong> on <strong>{{format_date post.creation_date}}</strong></h5></div></a>
+            
+            <span class="buttons"><a href="/edit-post"><i class="fas fa-edit"></i></a><i id="delete-button" class="fas fa-trash-alt"></i></span>
+            
             <p class="card-text user-post-text">
                 {{post.text}}
                 <small><strong>Post ID - {{post.id}}</strong></small>
-                <span class="buttons"><a href="/edit-post"><i class="fas fa-edit"></i></a><i id="delete-button" class="fas fa-trash-alt"></i></span>
             </p>
         </div>
     </div>
     {{/each}}
     <div class="new-post-container">
-        <h1><strong>Create new post:</strong></h1>
+        <h1 class="card-title"><strong>Create new post:</strong></h1>
         <form class="new-post-form">
             <h4>Enter title and post content</h4>
 
@@ -27,7 +28,7 @@
 
             <div class="form-outline mb-4">
                 <textarea class="form-control" id="content-input" rows="8"></textarea>
-                <label for="content-input" class="form-label">Enter your post content here</label>
+                <label for="content-input" class="form-label">Enter post content</label>
             </div>
 
             <div class="text-center pt-1 mb-3 pb-1">
@@ -37,4 +38,3 @@
     </div>
 </div>
 </main>
-<script src = '/js/logout.js'></script>
