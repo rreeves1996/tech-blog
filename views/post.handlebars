@@ -12,36 +12,6 @@
             </div>
         </div>
         {{/each}}
-        {{#if logged_in}}
-        <div class="new-comment-container">
-            <h1 class="card-title"><strong>New Comment</strong></h1>
-            <form class="new-comment-form">
-                <h4>Write a new comment on this post:</h4>
-
-                <div class="form-outline mb-4">
-                    <textarea class="form-control" id="content-input" rows="8"></textarea>
-                    <label for="content-input" class="form-label">Enter post content</label>
-                </div>
-
-                <div class="text-center pt-1 mb-3 pb-1">
-                    <button class="btn btn-primary fa-lg mb-4 mt-2" type="button">Submit comment</button>
-                </div>
-            </form>
-        </div>
-        {{else}}
-        <div class="new-comment-container">
-            <h1 class="card-title"><strong>New Comment</strong></h1>
-            <form class="new-comment-form">
-                <h4>Login to add a comment:</h4>
-
-                <div class="text-center pt-1 mb-5 pb-1">
-                    <button href="/login" class="btn btn-primary btn-block fa-lg mb-5 w-75 m-auto" type="button">Log in</button>
-                    <p class="mb-0">Don't have an account?</p>
-                    <button href="/register" type="button" class="btn btn-primary fa-lg m-3">Create account</button>
-                </div>
-            </form>
-        </div>
-        {{/if}}
         <div class="post-comments-container">
             {{#if comments}}
             <h1 class="post-comments"><strong>Post comments:</strong></h1>
@@ -64,5 +34,39 @@
             <h1 class="post-comments text-center"><strong>No comments to show! :[</strong></h1>
             {{/if}}
         </div>
+        {{#if logged_in}}
+        <div class="new-comment-container">
+            <h1 class="card-title"><strong>Add Comment</strong></h1>
+            <form class="new-comment-form">
+                <h4>Write a new comment on this post:</h4>
+
+                <div class="form-outline mb-4">
+                    <textarea class="form-control" id="comment-input" rows="8"></textarea>
+                    <label for="comment-input" class="form-label">Enter your comment</label>
+                </div>
+                {{#each posts as |post|}}
+                <div class="text-center pt-1 mb-3 pb-1">
+                    <button class="btn btn-primary fa-lg mb-4 mt-2" id="submit-comment" data-id="{{post.id}}" type="button">Submit comment</button>
+                </div>
+                {{/each}}
+            </form>
+        </div>
+        {{else}}
+        <div class="new-comment-container">
+            <h1 class="card-title"><strong>New Comment</strong></h1>
+            <form class="new-comment-form">
+                <h4>Login to add a comment:</h4>
+
+                <div id="comment-login-register" class="text-center pt-1 mb-5 pb-1">
+                    <a href="/login"><button class="btn btn-primary btn-block fa-lg mb-5 w-75 m-auto" type="button">Log in</button></a>
+                    <p class="mb-0">Don't have an account?</p>
+                    <a href="/register"><button href="/register" type="button" class="btn btn-primary fa-lg m-3">Create account</button></a>
+                </div>
+            </form>
+        </div>
+        {{/if}}
     </div>
 </main>
+{{#if logged_in}}
+<script src = '/js/comment.js'></script>
+{{/if}}
