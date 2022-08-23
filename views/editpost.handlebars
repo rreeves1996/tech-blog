@@ -1,0 +1,33 @@
+
+{{#each posts as |post|}}
+<div class="post-container d-flex justify-content-center">
+    <div class="edit-post-container card">
+    <div class="card-body">
+        <h1 class="card-title text-center"><strong>Post edit</strong></h1>
+        <form class="edit-post-form">
+            <h4>Editing <strong>Post {{post.id}}</strong> posted on <strong>{{format_date post.creation_date}}</strong></h4>
+
+            <div class="form-outline form-red mb-4 ">
+                <input type="text" id="edit-post-title-input" class="form-control" value="{{post.title}}"/>
+                <label class="form-label" for="edit-post-title-input">Post title</label>
+            </div>
+
+
+            <div class="form-outline mb-4">
+                <textarea class="form-control" id="edit-post-content-input" rows="8">{{post.text}}</textarea>
+                <label for="edit-post-content-input" class="form-label">Post content</label>
+            </div>
+
+            <div class="text-center pt-1 mb-0 pb-0">
+                <button class="btn btn-primary fa-lg mb-4 mt-2" id="edit-post-submit" data-id="{{post.id}}" type="button">Submit</button>
+            </div>
+            <div class="text-center mb-lg-0">
+                <p class="mb-2"><a href="/dashboard">Cancel</a></p>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+{{/each}}
+</main>
+<script src = '/js/postedit.js'></script>

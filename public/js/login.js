@@ -1,4 +1,3 @@
-// Login form
 const loginForm = async (event) => {
     event.preventDefault();
 

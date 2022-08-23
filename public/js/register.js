@@ -1,4 +1,3 @@
-// Sign up form
 const signupForm = async (event) => {
     event.preventDefault();
 

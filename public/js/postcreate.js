@@ -11,7 +11,7 @@ const newPost = async (event) => {
     if(title && text) {
         const response = await fetch('/api/post', {
             method: 'POST',
-            body: JSON.stringify({ title, text}),
+            body: JSON.stringify({ title, text }),
             headers: { 'Content-Type': 'application/json' }
         });
 

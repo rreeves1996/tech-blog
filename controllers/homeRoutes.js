@@ -81,7 +81,7 @@ router.get('/post/:id', async (req, res) => {
             include: [
                 { 
                     model: User,
-                    atttributes: ['username'],
+                    atttributes: ['username', 'id'],
                 }
             ]
         });
@@ -95,13 +95,12 @@ router.get('/post/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['username'],
+                    attributes: ['username', 'id'],
                 },
             ]
         });
       
         const comments = commentData.map((Comment) => Comment.get({ plain: true }));
-
 
         res.render('post', {
             posts,
@@ -112,6 +111,48 @@ router.get('/post/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+router.get('/edit-post/:id', async (req, res) => {
+    try {
+        const postData = await Post.findAll({
+            where: {
+                id: req.params.id,
+            },
+            include: [
+                {
+                    model: User,
+                    attributes: ['username', 'id'],
+                },
+            ]
+        });
 
+        const posts = postData.map((Post) => Post.get({ plain: true }));
+
+        res.render('editpost', {
+            posts,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.put('/update-post/:id', async (req, res) => {
+    try {
+        const editedPost = await Post.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+
+        const postData = editedPost.update({
+            ...req.body,
+            user_id: req.session.user_id,
+        });
+
+        res.status(200).json(postData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+  });
 
 module.exports = router;
