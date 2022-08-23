@@ -22,5 +22,10 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rreeves1996/tech-blog.git"
+  },
+  "homepage": "https://github.com/rreeves1996/tech-blog#readme"
 }
