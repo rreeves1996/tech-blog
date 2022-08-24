@@ -14,15 +14,13 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: 'Super secret secret',
-  cookie: {
-    maxAge: 600000,
-  },
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
+    secret: 'Super secret secret',
+    cookie: {maxAge:600000},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
 };
 
 app.use(session(sess));
@@ -32,10 +30,12 @@ app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//Serves all files to user from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+    app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
 });
