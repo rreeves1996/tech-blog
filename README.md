@@ -17,3 +17,6 @@ To use, log in to MySQL "mysql -u root -p" and source the schema by inputting "S
 
 ## App Preview
 [App preview](https://user-images.githubusercontent.com/102436216/186249284-501aa4dc-70b5-46ab-bfc3-26b91fb23819.png)
+
+## Live demo/Heroku deployment
+Click [here](https://tranquil-shore-42404.herokuapp.com/) to view the heroku deployment and demo the app
