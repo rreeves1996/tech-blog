@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS wthdvj5a6waflglf;
-CREATE DATABASE wthdvj5a6waflglf;
+DROP DATABASE IF EXISTS techblog_db;
+CREATE DATABASE techblog_db;
