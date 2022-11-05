@@ -23,4 +23,4 @@ const newPost = async (event) => {
     }
 };
 
-document.querySelector('#new-post-submit').addEventListener('click', newPost);
+document.querySelector('#new-post-submit').addEventListener('submit', newPost);
