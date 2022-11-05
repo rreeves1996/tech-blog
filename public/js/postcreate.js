@@ -16,11 +16,12 @@ const newPost = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            // document.location.replace('/dashboard');
+            console.log(title)
         } else {
             alert(response.statusText);
         }
     }
 };
 
-document.querySelector('#new-post-submit').addEventListener('submit', newPost);
+document.querySelector('#new-post-submit').addEventListener('click', newPost);

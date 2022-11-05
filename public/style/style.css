@@ -3,6 +3,7 @@
     --card-border: rgba(60, 56, 90, 0.582);
     --header-border: rgba(66, 60, 107, 0.411);
     --main-gradient: linear-gradient(36deg, rgba(207,70,252,1) 0%, rgba(9,102,213,1) 100%);
+    --mdb-primary: red !important;
 }
 
 .btn-primary {
@@ -119,7 +120,15 @@ input {
         left: 10px;
     }
 
-
+    .md-outline input:focus {
+        border-color: red !important;
+        box-shadow: inset 0 0 0 1px red !important;
+        border-bottom: 1px solid red !important;
+      }
+      
+      .md-outline label.active {
+        color: red !important;
+      }
     /* ------ NAV BUTTONS ------ */
     /* ------------------------- */
 
