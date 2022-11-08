@@ -194,6 +194,7 @@ input {
 
     .card {
         background-color: white;
+        box-shadow: none !important;
     }
     .post-container {
         width: 60vw;

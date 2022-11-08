@@ -7,7 +7,7 @@
             <a href="/post/{{post.id}}"><div class="card-title"><h2><strong>{{post.title}}</strong></h2>
             <h5 class="card-subtitle"><i class="fa-solid fa-chevron-right"></i> posted by <strong>{{post.user.username}}</strong> on <strong>{{format_date post.creation_date}}</strong></h5></div></a>
             
-            <span class="buttons"><a href="/edit-post/{{post.id}}"><i class="fas fa-edit"></i></a><i id="delete-button" data-id="{{post.id}}" class="fas fa-trash-alt"></i></span>
+            <span class="buttons"><a href="/edit-post/{{post.id}}"><i class="fas fa-edit"></i></a><i id="delete-button" data-id="{{post.id}}" class="fas fa-trash-alt delete-button"></i></span>
 
             <p class="card-text user-post-text">
                 {{post.text}}
@@ -43,6 +43,4 @@
 </div>
 </main>
 <script src = '/js/postcreate.js'></script>
-{{#if posts}}
 <script src = '/js/postdelete.js'></script>
-{{/if}}

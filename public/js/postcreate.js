@@ -7,7 +7,6 @@ const newPost = async (event) => {
     console.log(title);
     console.log(text);
 
-
     if(title && text) {
         const response = await fetch('/api/post', {
             method: 'POST',
@@ -16,8 +15,7 @@ const newPost = async (event) => {
         });
 
         if (response.ok) {
-            // document.location.replace('/dashboard');
-            console.log(title)
+            document.location.replace('/dashboard');
         } else {
             alert(response.statusText);
         }
